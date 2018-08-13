@@ -1,0 +1,27 @@
+language: python
+python:
+  - 2.7
+  - 3.4
+  - 3.5
+  - 3.6
+# Enable 3.7 without globally enabling sudo and dist: xenial for other build jobs
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
+install:
+- pip install tox-travis
+script:
+- tox
+- '[[ "$TRAVIS_TAG" = "" ]] || [[ "$TRAVIS_TAG" = "$(python setup.py --version)" ]]'
+- |
+  if git show --format=%B --quiet "${TRAVIS_PULL_REQUEST_SHA:-${TRAVIS_TAG:-${TRAVIS_COMMIT}}}" \
+     | grep '\[changelog skip\]' > /dev/null; then
+    echo "Skip changelog checker..."
+  elif [[ "$TRAVIS_TAG" != "" ]]; then
+    ! grep -i "to be released" CHANGES.md
+  else
+    [[ "$TRAVIS_COMMIT_RANGE" = "" ]] || \
+    [[ "$(git diff --name-only "$TRAVIS_COMMIT_RANGE" | grep CHANGES\.md)" != "" ]]
+  fi
