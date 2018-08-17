@@ -22,6 +22,16 @@ Thanks for your contribution!
 - In general stdlib comes first, then 3rd party, then local packages,
   and that each group is individually alphabetized.
   - See detail, [flake8-import-order-spoqa]
+- It is recommend to run `hooks/pre-commit` before you make a commit.
+  To run the script automatically, add `hooks` directory on your
+  `core.hooksPath`.
+
+  ```bash
+  $ ./hooks/pre-commit
+  $ # or
+  $ git config core.hooksPath "$PWD/hooks"
+  $ git commit
+  ```
 
 [pep8]: https://www.python.org/dev/peps/pep-0008/
 [flake8]: http://flake8.pycqa.org/en/latest/
