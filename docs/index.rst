@@ -32,9 +32,9 @@ function from ``leftpad`` module in your Python script.
 
 Second of all, you can use directly `leftpad` command in your shell.
 
-... code-block:: bash
+.. code-block:: bash
     
-    $ leftpad -l 40 "hello world"
+   $ leftpad -l 40 "hello world"
 
 .. toctree::
    :maxdepth: 3
