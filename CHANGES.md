@@ -1,7 +1,11 @@
-0.1.0
-------
+## 0.1.1
 
 To be released.
+
+
+## 0.1.0
+
+Aug 14th, 2018
 
 - Add contribution guide. [#4]
 - Add CLI. [#3]
