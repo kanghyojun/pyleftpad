@@ -1,0 +1,3 @@
+
+.. automodule:: leftpad.func
+   :members:
