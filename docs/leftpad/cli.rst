@@ -1,0 +1,3 @@
+
+.. automodule:: leftpad.cli
+   :members:

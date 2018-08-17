@@ -2,6 +2,10 @@
 
 To be released.
 
+- Add sphinx for documentation [#8]
+
+[#8]: https://github.com/admire93/pyleftpad/issues/8
+
 
 ## 0.1.0
 
